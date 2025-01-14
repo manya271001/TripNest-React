@@ -73,5 +73,278 @@
   "price": "Rs. 4,800 Night"
 }
 
+  ],
+  "cabin":[
+  {
+    "id": 1,
+    "img": "cabin1.jpg",
+    "title": "Cozy Cabin in Shimla",
+    "host": "Rohan Sharma",
+    "date": "Available: Jan 15 - Jan 20",
+    "price": "₹4500/night"
+    
+  },
+  {
+    "id": 2,
+    "title": "Rustic Retreat in Manali",
+    "host": "Aditi Mehta",
+    "date": "Available: Feb 5 - Feb 10",
+    "price": "₹5000/night",
+    "img": "cabin2.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Forest Getaway in Munnar",
+    "host": "Priya Nair",
+    "date": "Available: Apr 10 - Apr 15",
+    "price": "₹4200/night",
+    "img": "cabin4.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Tranquil Cabin in Coorg",
+    "host": "Karan Desai",
+    "date": "Available: May 5 - May 10",
+    "price": "₹4700/night",
+    "img": "cabin5.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Woodland Escape in Nainital",
+    "host": "Sneha Gupta",
+    "date": "Available: Jun 15 - Jun 20",
+    "price": "₹5300/night",
+    "img": "cabin6.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Luxury Cabin in Darjeeling",
+    "host": "Arjun Dutta",
+    "date": "Available: Jul 1 - Jul 5",
+    "price": "₹6000/night",
+    "img": "cabin7.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Hilltop Cabin in Mussoorie",
+    "host": "Riya Kapoor",
+    "date": "Available: Aug 10 - Aug 15",
+    "price": "₹5500/night",
+    "img": "cabin8.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Lakeview Cabin in Udaipur",
+    "host": "Sameer Singh",
+    "date": "Available: Sep 1 - Sep 5",
+    "price": "₹4800/night",
+    "img": "cabin9.jpg"
+  },
+    {
+    "id": 10,
+    "title": "Lakeview Cabin in Udaipur",
+    "host": "Sameer Singh",
+    "date": "Available: Sep 1 - Sep 5",
+    "price": "₹4800/night",
+    "img": "cabin10.jpg"
+  }
+],
+"beach": [
+    {
+      "id": 1,
+      "title": "Ocean Bliss in Goa",
+      "host": "Ayesha Khan",
+      "date": "Available: Jan 10 - Jan 15",
+      "price": "₹5000/night",
+      "img": "beach1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Sunset Retreat in Kovalam",
+      "host": "Rajesh Nair",
+      "date": "Available: Feb 5 - Feb 10",
+      "price": "₹5200/night",
+      "img": "beach2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Tropical Escape in Andaman",
+      "host": "Sneha Verma",
+      "date": "Available: Mar 1 - Mar 5",
+      "price": "₹6500/night",
+      "img": "beach3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Sea Breeze Villa in Gokarna",
+      "host": "Arjun Shetty",
+      "date": "Available: Apr 15 - Apr 20",
+      "price": "₹4800/night",
+      "img": "beach4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Paradise View in Alibaug",
+      "host": "Pooja Joshi",
+      "date": "Available: May 10 - May 15",
+      "price": "₹5500/night",
+      "img": "beach5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Lagoon Stay in Varkala",
+      "host": "Vikram Singh",
+      "date": "Available: Jun 20 - Jun 25",
+      "price": "₹4700/night",
+      "img": "beach6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Coastal Haven in Pondicherry",
+      "host": "Meera Iyer",
+      "date": "Available: Jul 5 - Jul 10",
+      "price": "₹5800/night",
+      "img": "beach7.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Serene Shore in Rameswaram",
+      "host": "Kartik Kumar",
+      "date": "Available: Aug 1 - Aug 5",
+      "price": "₹4600/night",
+      "img": "beach8.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Golden Sands in Diu",
+      "host": "Priya Shah",
+      "date": "Available: Sep 15 - Sep 20",
+      "price": "₹5100/night",
+      "img": "beach9.jpg"
+    }
+  ],
+    "locations": [
+    {
+      "id": 1,
+      "title": "Mountain Adventure in Himachal",
+      "host": "Rohit Sharma",
+      "date": "Available: Jan 10 - Jan 15",
+      "price": "₹6500/night",
+      "img": "mountain2.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Cozy Camping in Spiti Valley",
+      "host": "Aarti Mehta",
+      "date": "Available: Feb 1 - Feb 5",
+      "price": "₹4000/night",
+      "img": "camping1.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Houseboat Stay in Dal Lake",
+      "host": "Siddharth Pandey",
+      "date": "Available: Mar 5 - Mar 10",
+      "price": "₹7000/night",
+      "img": "houseBoat1.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Skiing Retreat in Gulmarg",
+      "host": "Maya Gupta",
+      "date": "Available: Apr 10 - Apr 15",
+      "price": "₹8000/night",
+      "img": "gulmarg1.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Luxury Camping in Kerala",
+      "host": "Vikram Iyer",
+      "date": "Available: May 1 - May 5",
+      "price": "₹6000/night",
+      "img": "kerla1.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Beach Camping in Varkala",
+      "host": "Priya Sharma",
+      "date": "Available: Jun 10 - Jun 15",
+      "price": "₹5000/night",
+      "img": "camping2.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Seaside Houseboat in Kerala",
+      "host": "Anuj Kumar",
+      "date": "Available: Jul 1 - Jul 5",
+      "price": "₹7500/night",
+      "img": "houseBoat2.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Mountain Resort in Manali",
+      "host": "Simran Kaur",
+      "date": "Available: Aug 15 - Aug 20",
+      "price": "₹7000/night",
+      "img": "mountain2.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Winter Escape in Gulmarg",
+      "host": "Rajeev Kumar",
+      "date": "Available: Sep 5 - Sep 10",
+      "price": "₹9000/night",
+      "img": "gulmarg2.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Heritage Houseboat in Srinagar",
+      "host": "Alisha Khan",
+      "date": "Available: Oct 10 - Oct 15",
+      "price": "₹8500/night",
+      "img": "houseBoat1.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Mountain Chalet in Leh",
+      "host": "Nisha Verma",
+      "date": "Available: Nov 1 - Nov 5",
+      "price": "₹7500/night",
+      "img": "mountain3.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Luxury Stay in Kerala",
+      "host": "Kartik Singh",
+      "date": "Available: Dec 5 - Dec 10",
+      "price": "₹8000/night",
+      "img": "kerla2.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Adventure in Kerala Backwaters",
+      "host": "Neha Reddy",
+      "date": "Available: Jan 5 - Jan 10",
+      "price": "₹9000/night",
+      "img": "kerla3.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Mountain Trekking in Uttarakhand",
+      "host": "Amit Singh",
+      "date": "Available: Feb 5 - Feb 10",
+      "price": "₹6800/night",
+      "img": "mountain1.jpg"
+    },
+     {
+    "id": 15,
+    "title": "Hilltop Cabin in Mussoorie",
+    "host": "Riya Kapoor",
+    "date": "Available: Aug 10 - Aug 15",
+    "price": "₹5500/night",
+    "img": "cabin8.jpg"
+  }
   ]
+
+
 }

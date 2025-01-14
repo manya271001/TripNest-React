@@ -3,7 +3,7 @@ import './Style.css'
 import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import List from './List'
-function Home(){
+function Mountains(){
     let[detail,setDtail]=useState([])
 
       function zoomIn(event) {
@@ -20,7 +20,7 @@ function Home(){
   }
 
     useEffect(()=>{
-        axios.get("http://localhost:3000/home")
+        axios.get("http://localhost:3000/locations")
         .then(res=>{
             setDtail(res.data)
             console.log(res.data)
@@ -57,4 +57,4 @@ function Home(){
         </>
     )
 }
-export default Home
+export default Mountains

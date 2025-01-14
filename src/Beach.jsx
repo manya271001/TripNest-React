@@ -1,9 +1,8 @@
-
-import './Style.css'
-import { useEffect, useRef, useState } from 'react'
-import axios from 'axios'
 import List from './List'
-function Home(){
+import './Style.css'
+import { useEffect,  useState } from 'react'
+import axios from 'axios'
+function Beach(){
     let[detail,setDtail]=useState([])
 
       function zoomIn(event) {
@@ -20,7 +19,7 @@ function Home(){
   }
 
     useEffect(()=>{
-        axios.get("http://localhost:3000/home")
+        axios.get("http://localhost:3000/beach")
         .then(res=>{
             setDtail(res.data)
             console.log(res.data)
@@ -28,8 +27,7 @@ function Home(){
     },[])
     return(
         <>
-        
-      <List/>
+        <List/>
 <section className='cardSection' >
        
  {
@@ -57,4 +55,4 @@ function Home(){
         </>
     )
 }
-export default Home
+export default Beach

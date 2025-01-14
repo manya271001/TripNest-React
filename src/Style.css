@@ -353,6 +353,10 @@ datalist img{
     align-items: center;
     gap: 5px;
 }
+.listOfPlaces a:hover,
+.listOfPlaces link:hover{
+    text-decoration: underline;
+}
 .listOfPlaces img{
     height: 30px;
     width: 30px;
