@@ -2,7 +2,7 @@ import { Route, Routes, useLocation } from "react-router-dom"
 import SignUp from './SignUp'
 import Login from "./Login"
 import Home from "./Home"
-import Header from "./Layout"
+import {Header,Footer} from './Layout'
 function App() {
  let local = useLocation()
 
@@ -16,6 +16,7 @@ function App() {
         <Route path='/signup' element={<SignUp/>}/>
         <Route path="/login" element={<Login/>}/>
       </Routes>
+      {!auth && <Footer/>}
     </>
   )
 }

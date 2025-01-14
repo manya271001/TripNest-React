@@ -152,4 +152,65 @@ function Header() {
   );
 }
 
-export default Header;
+// Footer
+const Footer = () => {
+  return (
+   <footer className="footer">
+ <div className="footer-sections">
+        <div className="footer-column">
+      <h4>Support</h4>
+          <ul>
+        <li><Link to="/help-center">Help Centre</Link></li>
+        <li><Link to="/aircover">AirCover</Link></li>
+         <li><Link to="/anti-discrimination">Anti-discrimination</Link></li>
+         <li><Link to="/disability-support">Disability support</Link></li>
+        <li><Link to="/cancellation-options">Cancellation options</Link></li>
+        <li><Link to="/report-neighbourhood-concern">Report neighbourhood concern</Link></li>
+          </ul>
+        </div>
+        <div className="footer-column">
+          <h4>Hosting</h4>
+          <ul>
+     <li><Link to="/airbnb-your-home">Airbnb your home</Link></li>
+     <li><Link to="/aircover-hosts">AirCover for Hosts</Link></li>
+     <li><Link to="/hosting-resources">Hosting resources</Link></li>
+     <li><Link to="/community-forum">Community forum</Link></li>
+    <li><Link to="/hosting-responsibly">Hosting responsibly</Link></li>
+    <li><Link to="/hosting-class">Join a free Hosting class</Link></li>
+     <li><Link to="/find-co-host">Find a co-host</Link></li>
+          </ul>
+        </div>
+        <div className="footer-column">
+          <h4>TripNest</h4>
+          <ul>
+            <li><Link to="/newsroom">Newsroom</Link></li>
+       <li><Link to="/new-features">New features</Link></li>
+          <li><Link to="/careers">Careers</Link></li>
+        <li><Link to="/investors">Investors</Link></li>
+            <li><Link to="/emergency-stays">Airbnb.org emergency stays</Link></li>
+          </ul>
+        </div>
+      </div>
+  <div className="footer-bottom">
+            <p>© 2025 TripNest, Inc.</p>
+     <p>
+          <Link to="/privacy">Privacy</Link> · 
+          <Link to="/terms">Terms</Link> ·
+          <Link to="/sitemap">Sitemap</Link> · 
+          <Link to="/company-details">Company details</Link>
+        </p>
+        <div className="footer-settings">
+    <span>English (IN)</span>
+          <span>₹ INR</span>
+          <span>
+    <Link to="#"><i className="fab fa-facebook"></i></Link>
+     <Link to="#"><i className="fab fa-twitter"></i></Link>
+    <Link to="#"><i className="fab fa-instagram"></i></Link>
+          </span>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export {Header,Footer};

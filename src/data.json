@@ -1,0 +1,77 @@
+{
+  "home": [
+    {
+      "id": 1,
+      "img": "bnb1.jpg",
+      "title": "Udaipur, India",
+      "host": "Jyeshtha",
+      "date": "20-25 Jan",
+      "price": "Rs. 3,709 Night"
+    },
+    {
+      "id": 2,
+      "img": "bnb2.jpg",
+      "title": "Goa, India",
+      "host": "Priya",
+      "date": "15-20 Feb",
+      "price": "Rs. 4,500 Night"
+    },
+    {
+      "id": 3,
+      "img": "bnb3.jpg",
+      "title": "Manali, India",
+      "host": "Rohit",
+      "date": "10-15 Mar",
+      "price": "Rs. 3,200 Night"
+    },
+    {
+      "id": 4,
+      "img": "bnb4.jpg",
+      "title": "Jaipur, India",
+      "host": "Ananya",
+      "date": "5-10 Apr",
+      "price": "Rs. 4,000 Night"
+    },
+    {
+      "id": 5,
+      "img": "bnb5.jpg",
+      "title": "Pondicherry, India",
+      "host": "Vikram",
+      "date": "1-5 May",
+      "price": "Rs. 3,800 Night"
+    },
+    {
+      "id": 6,
+      "img": "bnb6.jpg",
+      "title": "Kerala, India",
+      "host": "Nisha",
+      "date": "20-25 Jun",
+      "price": "Rs. 5,000 Night"
+    },
+    {
+  "id": 7,
+  "img": "bnb7.jpg",
+  "title": "Shimla, India",
+  "host": "Aarav",
+  "date": "1-5 Jul",
+  "price": "Rs. 4,200 Night"
+},
+{
+  "id": 8,
+  "img": "bnb8.jpg",
+  "title": "Ooty, India",
+  "host": "Meera",
+  "date": "10-15 Aug",
+  "price": "Rs. 3,900 Night"
+},
+{
+  "id": 9,
+  "img": "bnb9.jpg",
+  "title": "Darjeeling, India",
+  "host": "Kabir",
+  "date": "20-25 Sep",
+  "price": "Rs. 4,800 Night"
+}
+
+  ]
+}

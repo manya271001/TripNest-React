@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Header from "./Layout" 
+import {Header} from "./Layout" 
 import './Style.css'
 
 
