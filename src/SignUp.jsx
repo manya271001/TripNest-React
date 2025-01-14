@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Login from './Login'
 import './Style.css'
+import { useNavigate } from 'react-router-dom';
 
 
 function SignUp(){
@@ -12,7 +13,7 @@ function SignUp(){
     confirmPassword: '',
     phone: ''
   });
-
+  let location=useNavigate()
   function hinput(event) {
     const { name, value } = event.target;
     setInput({
@@ -37,7 +38,7 @@ function SignUp(){
   }
 
   if (status) {
-    return <Login />;
+    location('/login')
   }
 
 return(

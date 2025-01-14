@@ -2,9 +2,15 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import './Style.css';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function Header() {
   const refelement = useRef();
+  const [startDate, setStartDate] = useState(null)
+   const [endDate, setEndDate] = useState(null);
+        
+
   const [global, setGlobal] = useState(false);
   const refelementHeading = useRef();
   const refelementHeading2 = useRef();
@@ -24,7 +30,7 @@ function Header() {
 
   return (
     <>
-    <section style={{backgroundColor:"#f5f5f5"}}>
+    <section>
       <section id="navbar">
         <ul className="navbar-list">
           <li className="navbar-logo">
@@ -35,19 +41,31 @@ function Header() {
             </h3>
           </li>
           <div className="navbar-menu">
-            <div>
+            
               <div>
               <label htmlFor="">Anywhere</label>
-              <input type="text" />
+              <input type="text" placeholder='Location' style={{borderRight:"1px solid black"}}/>
             </div>
             <div>
-              <label htmlFor="">AnyWeek</label>
-              <input type='text' />
+              <label htmlFor="date-picker">Date:</label>
+                    <DatePicker
+                      id="date-picker"
+                      selected={startDate}
+                      onChange={(date) => setStartDate(date)}
+                      placeholderText="Select a date"
+                      className="date-picker"
+                      minDate={new Date()} 
+                      dateFormat="dd/MM/yyyy"/>
             </div>
 
+            <div>
+              <i className="fa-solid fa-magnifying-glass search-glass" style={{color: "white"}}></i>
             </div>
-            <li><i className="fa-solid fa-globe" onClick={() => setGlobal(!global)}></i></li>
+
+            
           </div>
+          <li><i className="fa-solid fa-globe" onClick={() => setGlobal(!global)}></i></li>
+          
           <li>
             <div className="dropdown">
               <button className="btn btn-secondary dropdown-toggle custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -91,19 +109,45 @@ function Header() {
 
       <section id='searchSection'>
         <div id="city" className='searchBox'>
-          <h4>Where</h4>
-           <input list="destinations" id="destination" name="destination" placeholder="Search destinations..."/>
-  
-  <datalist id="destinations">
-   <option value="New Delhi, Delhi"/> <img src="delhi.jpeg" alt="" />
-    <option value="North Goa, Goa"/>
-    <option value="Jaipur, Rajasthan"/>
-    <option value="Mumbai, Maharashtra"/>
-    <option value="Pune City, Maharashtra"/>
-  </datalist>
+          <label htmlFor="">Where</label>
+       <input type='text' placeholder='Search Destination'/>
         </div>
+        <div id="startDate" className='searchBox'>
+           <label htmlFor="date-picker">Check In</label>
+                    <DatePicker
+                      id="date-picker"
+                      selected={startDate}
+                      onChange={(date) => setStartDate(date)}
+                      placeholderText="Add Dates"
+                      className="date-picker"
+                      minDate={new Date()} 
+                      dateFormat="dd/MM/yyyy"/>
+        </div>
+           <div id="endDate" className='searchBox'>
+           <label htmlFor="date-picker">Check Out</label>
+                       <DatePicker
+          id="end-date-picker"
+          selected={endDate}
+          onChange={(date) => setEndDate(date)}
+          placeholderText="Add Dates"
+          className="date-picker"
+          minDate={startDate}
+          dateFormat="dd/MM/yyyy"
+        />
+        </div>
+          <div className='searchBox'>
+          <label htmlFor="">Who</label>
+          <input type="number" placeholder='Add Guest' style={{border:"none"}}/>
+          </div>
+          <div>
+            <i className="fa-solid fa-magnifying-glass search-glass" style={{padding:"15px",marginRight:"20px",marginTop:"10px"}}></i>
+          
+        </div>
+      
       </section>
       </section>
+    
+    
     </>
   );
 }
