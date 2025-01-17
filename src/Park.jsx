@@ -36,7 +36,7 @@ function Park(){
         detail.map((e)=>(
              
              <div className="cards " key={e.id} >
-  <img  src={e.img} className="cardimg" onMouseEnter={zoomIn} onMouseLeave={zoomOut} alt="..."/>
+    <img  src={e.img} className="cardimg" onMouseEnter={zoomIn} onMouseLeave={zoomOut} alt="..." onClick={()=>booking(e.id)}/>
   <div className='cardItems'>
     <h5>{e.title}</h5>
     <p > Hosted by {e.host}</p>

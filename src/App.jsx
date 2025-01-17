@@ -12,6 +12,7 @@ import Park from "./park"
 import Mansion from "./Mansion"
 import Mountains from './Mountain'
 import View from './View'
+import Booking from "./Booking"
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/mansion" element={<Mansion/>}/>
         <Route path="/mountain" element={<Mountains/>}/>
         <Route path="/view" element={<View/>}/>
+        <Route path="/booking" element={<Booking/>}/>
       </Routes>
       {!auth && <Footer/>}
     </>

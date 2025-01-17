@@ -46,6 +46,8 @@ function List(){
             </div>
             
         </section>
+
+         <Link to="/booking"></Link>
         </>
     )
 }
