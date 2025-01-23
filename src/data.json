@@ -412,6 +412,275 @@
       "date": "15-20 Feb",
       "price": "Rs. 4,500 ",
       "profile": "profile1.jpg"
+    },
+    {
+      "id": "1",
+      "img": "bnb1.jpg",
+      "title": "Udaipur, India",
+      "host": "Jyeshtha",
+      "date": "20-25 Jan",
+      "price": "Rs. 3,709 ",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "1",
+      "img": "bnb1.jpg",
+      "title": "Udaipur, India",
+      "host": "Jyeshtha",
+      "date": "20-25 Jan",
+      "price": "Rs. 3,709 ",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "2",
+      "img": "bnb2.jpg",
+      "title": "Goa, India",
+      "host": "Priya",
+      "date": "15-20 Feb",
+      "price": "Rs. 4,500 ",
+      "profile": "profile1.jpg"
+    },
+    {
+      "id": "3",
+      "img": "bnb3.jpg",
+      "title": "Manali, India",
+      "host": "Rohit",
+      "date": "10-15 Mar",
+      "price": "Rs. 3,200 ",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "3",
+      "img": "bnb3.jpg",
+      "title": "Manali, India",
+      "host": "Rohit",
+      "date": "10-15 Mar",
+      "price": "Rs. 3,200 ",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "2",
+      "img": "bnb2.jpg",
+      "title": "Goa, India",
+      "host": "Priya",
+      "date": "15-20 Feb",
+      "price": "Rs. 4,500 ",
+      "profile": "profile1.jpg"
+    },
+    {
+      "id": "1",
+      "img": "bnb1.jpg",
+      "title": "Udaipur, India",
+      "host": "Jyeshtha",
+      "date": "20-25 Jan",
+      "price": "Rs. 3,709 ",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "1",
+      "img": "bnb1.jpg",
+      "title": "Udaipur, India",
+      "host": "Jyeshtha",
+      "date": "20-25 Jan",
+      "price": "Rs. 3,709 ",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "1",
+      "img": "bnb1.jpg",
+      "title": "Udaipur, India",
+      "host": "Jyeshtha",
+      "date": "20-25 Jan",
+      "price": "Rs. 3,709 ",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "1",
+      "img": "bnb1.jpg",
+      "title": "Udaipur, India",
+      "host": "Jyeshtha",
+      "date": "20-25 Jan",
+      "price": "Rs. 3,709 ",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "4",
+      "img": "bnb4.jpg",
+      "title": "Jaipur, India",
+      "host": "Ananya",
+      "date": "5-10 Apr",
+      "price": "Rs. 4,000 ",
+      "profile": "profile2.jpg"
+    },
+    {
+      "id": "7",
+      "img": "bnb7.jpg",
+      "title": "Shimla, India",
+      "host": "Aarav",
+      "date": "1-5 Jul",
+      "price": "Rs. 4,200 ",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "7",
+      "img": "bnb7.jpg",
+      "title": "Shimla, India",
+      "host": "Aarav",
+      "date": "1-5 Jul",
+      "price": "Rs. 4,200 ",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "2",
+      "img": "bnb2.jpg",
+      "title": "Goa, India",
+      "host": "Priya",
+      "date": "15-20 Feb",
+      "price": "Rs. 4,500 ",
+      "profile": "profile1.jpg"
+    },
+    {
+      "id": "2",
+      "img": "bnb2.jpg",
+      "title": "Goa, India",
+      "host": "Priya",
+      "date": "15-20 Feb",
+      "price": "Rs. 4,500 ",
+      "profile": "profile1.jpg"
+    },
+    {
+      "id": "9",
+      "img": "bnb9.jpg",
+      "title": "Darjeeling, India",
+      "host": "Kabir",
+      "date": "20-25 Sep",
+      "price": "Rs. 4,800 ",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "1",
+      "img": "bnb1.jpg",
+      "title": "Udaipur, India",
+      "host": "Jyeshtha",
+      "date": "20-25 Jan",
+      "price": "Rs. 3,709 ",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "6",
+      "img": "bnb6.jpg",
+      "title": "Kerala, India",
+      "host": "Nisha",
+      "date": "20-25 Jun",
+      "price": "Rs. 5,000 ",
+      "profile": "profile1.jpg"
+    },
+    {
+      "id": "3",
+      "img": "bnb3.jpg",
+      "title": "Manali, India",
+      "host": "Rohit",
+      "date": "10-15 Mar",
+      "price": "Rs. 3,200 ",
+      "profile": "profile3.jpg"
+    }
+  ],
+  "reservations": [
+    {
+      "id": "1",
+      "checkIn": "2025-01-24",
+      "checkOut": "2025-01-27",
+      "guests": 1
+    },
+    {
+      "id": "4",
+      "title": "Jaipur, India",
+      "img": "bnb4.jpg",
+      "checkIn": "2025-01-22T18:30:00.000Z",
+      "checkOut": "2025-01-23T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 1,
+      "totalPrice": "4,000",
+      "grandTotal": "10,500"
+    },
+    {
+      "id": "7",
+      "title": "Shimla, India",
+      "img": "bnb7.jpg",
+      "checkIn": "2025-01-21T18:30:00.000Z",
+      "checkOut": "2025-01-28T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 7,
+      "totalPrice": "29,400",
+      "grandTotal": "35,900",
+      "host": "Aarav",
+      "null": ""
+    },
+    {
+      "id": "7",
+      "title": "Shimla, India",
+      "img": "bnb7.jpg",
+      "checkIn": "2025-01-21T18:30:00.000Z",
+      "checkOut": "2025-01-28T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 7,
+      "totalPrice": "29,400",
+      "grandTotal": "35,900",
+      "host": "Aarav"
+    },
+    {
+      "checkIn": "2025-01-21",
+      "checkOut": "2025-01-26",
+      "guests": "3",
+      "id": "2"
+    },
+    {
+      "id": "2",
+      "title": "Goa, India",
+      "img": "bnb2.jpg",
+      "checkIn": "2025-01-21T18:30:00.000Z",
+      "checkOut": "2025-01-26T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 5,
+      "totalPrice": "22,500",
+      "grandTotal": "29,000",
+      "host": "Priya"
+    },
+    {
+      "checkIn": "2025-01-22",
+      "checkOut": "2025-01-29",
+      "guests": 1,
+      "id": "9"
+    },
+    {
+      "id": "1",
+      "title": "Udaipur, India",
+      "img": "bnb1.jpg",
+      "checkIn": "2025-01-24T18:30:00.000Z",
+      "checkOut": "2025-01-27T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 3,
+      "totalPrice": "11,127",
+      "grandTotal": "17,627",
+      "host": "Jyeshtha"
+    },
+    {
+      "id": "6",
+      "checkIn": "2025-01-26",
+      "checkOut": "2025-01-28",
+      "guests": "7"
+    },
+    {
+      "id": "3",
+      "title": "Manali, India",
+      "img": "bnb3.jpg",
+      "checkIn": "2025-01-23T18:30:00.000Z",
+      "checkOut": "2025-01-26T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 3,
+      "totalPrice": "9,600",
+      "grandTotal": "16,100",
+      "host": "Rohit"
     }
   ]
 }

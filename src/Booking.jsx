@@ -1,16 +1,20 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link ,useNavigate} from "react-router-dom"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
 import './Style.css'
 function Booking(){
-    const [startDate, setStartDate] = useState("");
+    const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [difference, setDifference] = useState(null);
   const [totalPrice, setTotalPrice] = useState(null);
+   const [grandTotal, setGrandTotal] = useState(null);
+   const [guestCount, setGuestCount] = useState(1); 
+  const [Bookingdetail, setBookingdetail] = useState({});
+  const navigate = useNavigate();
 
     let [detail,setData] = useState({})
 useEffect(()=>{
@@ -75,43 +79,75 @@ console.log(res.data)
       text: "Beautifully designed space. Every detail is thought through. I hope to return soon!",
     },
   ];
-const calculateDays = () => {
-    if (startDate && endDate) {
-      const start = new Date(startDate);
-      const end = new Date(endDate);
+useEffect(() => {
+  if (startDate && endDate) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
 
-      alert(start)
+    if (!isNaN(start.getTime()) && !isNaN(end.getTime())) {
+      const daysDiff = (end - start) / (1000 * 60 * 60 * 24);
 
-      if (!(isNaN(start.getTime())) && !(isNaN(end.getTime()))) {
-        const daysDiff = (end - start) / (1000 * 60 * 60 * 24);
+          if (daysDiff >= 0 && daysDiff !== difference) { 
+        setDifference(daysDiff);
+      }
 
-        if (daysDiff >= 0) {
-          setDifference(daysDiff);
-        } else {
-          setDifference(0);
-        }
-      } else {
-        console.error("Invalid date format for start or end date.");
-        setDifference(null);
+       else {
+        setDifference(0);
       }
     } else {
-      console.error("Start Date or End Date is missing.");
+      console.error("Invalid date format for start or end date.");
       setDifference(null);
     }
-  };
+  }
+}, [startDate, endDate]);
 
-  const renderTotalPrice = () => {
-    if (difference > 0) {
-      const price = parseFloat(detail.price.replace(/,/g, '').replace('Rs.', '').trim());
 
-      if (!isNaN(price)) {
-        const total = price * difference;
-        setTotalPrice(total);
-      } else {
-        setTotalPrice(null);
-      }
+ useEffect(() => {
+  if (difference > 0 && detail.price) {
+    const price = parseFloat(detail.price.replace(/,/g, '').replace('Rs.', '').trim());
+    if (!isNaN(price)) {
+      const total = price * difference;
+      setTotalPrice(total.toLocaleString('en-IN'));
+       
+     
+        const gTotal = total + 6500; 
+        setGrandTotal(gTotal.toLocaleString('en-IN')); 
+
+
+    } else {
+      setTotalPrice(null);
     }
+  } else {
+    setTotalPrice(null);
+  }
+}, [difference, detail.price]);
+  const handleReserve = () => {
+   const reservationData = {
+    id: detail.id,
+    title: detail.title,
+    img: detail.img,
+    checkIn: startDate,
+    checkOut: endDate,
+    guests: guestCount,
+    totalDays: difference,
+    totalPrice,
+    grandTotal,
+    host:detail.host
   };
+
+   axios.post("http://localhost:3000/reservations", reservationData)
+    .then((response) => {
+      console.log("Reservation successfully saved:", response.data);
+      navigate("/reservation", { state: reservationData });
+    })
+    .catch((error) => {
+      console.error("Error saving reservation:", error);
+      alert("Failed to make a reservation. Please try again.");
+    });
+
+    navigate("/reservation", { state: reservationData });
+  };
+
 
     return(
         <>
@@ -162,7 +198,7 @@ const calculateDays = () => {
             </div>
 
         <div id="reservation">
-            <div id="leftSide">
+            <div id="leftSide" style={{marginLeft:"30px"}}>
                 
             <h2>Room in {detail.title}</h2>
             <p>1 double bed🛏️ ,Shared bathroom</p>
@@ -275,7 +311,7 @@ const calculateDays = () => {
             </div>
 
 
-            <div id="rightSide" style={{paddingRight:"150px"}}>
+            <div id="rightSide" >
 
                 <h3>{detail.price}</h3>
 
@@ -283,7 +319,7 @@ const calculateDays = () => {
 
                   <div style={{display:" flex ",marginTop:" 30px " }}>
 
-                <div style={{borderRight:"1px solid black",marginRight:"50px"}}>
+                <div style={{marginRight:"5px"}}>
         <label>Check In:</label> <br />
         <DatePicker
           selected={startDate}
@@ -291,7 +327,6 @@ const calculateDays = () => {
            
             setStartDate(date);
             console.log('Selected Start Date:', startDate); 
-            calculateDays()
             
           }}
           placeholderText="Select Start Date"
@@ -309,7 +344,7 @@ const calculateDays = () => {
 
             setEndDate(date);
                 console.log('Selected End Date:', date);  
-            calculateDays()
+            
           }}
           placeholderText="Select End Date"
           dateFormat="dd/MM/yyyy"
@@ -318,36 +353,41 @@ const calculateDays = () => {
         />
       </div>
      
-    </div> <hr />
-          <div>
-            <label htmlFor="">Guest</label> <br />
-            <input type="number" placeholder="No of guest"/>
+    </div> 
+          <div style={{marginTop:"25px", textAlign:"center"}}>
+            <label htmlFor="">Guest</label> 
+            <input type="number" placeholder="No of guest"
+             value={guestCount}
+                onChange={(e) => setGuestCount(e.target.value)}
+            style={{textAlign:"center"}}/>
           </div>
 
             </div>
-           <button style={{
-  padding: "15px 0",
-  color: "white",
-  backgroundColor: "#D81B60", 
-  width: "98%", 
-  border: "none",
-  borderRadius: "18px",
-  fontSize: "16px",
-  fontWeight: "bold",
-  cursor: "pointer",
-  marginTop:"40px"
-}} >
-  RESERVE
-</button>
-{renderTotalPrice()}
-{totalPrice && (
-  <div>
-    <h3>Total: ₹{totalPrice}</h3>
+           <button id="button" onClick={handleReserve}>RESERVE</button>
+
+{/* {difference !== null && (
+  <p >Number of nights: {difference}</p>
+)} */}
+{totalPrice !== null && (
+  <div style={{display:"flex",flexDirection:"column",marginTop:"30px"}}>
+    <div style={{display:"flex" , gap:"150px"}}>
+  <p> {detail.price} &nbsp; X  &nbsp;{difference} nights </p>
+  <p><img src="rs.png" alt="" style={{height:"20px" , width:"20px"}}/>{totalPrice}</p>
   </div>
+   <div style={{display:"flex" , gap:"170px"}}>
+  <p>TripNest Service fee </p>
+  <p><img src="rs.png" alt="" style={{height:"20px" , width:"20px"}}/>6,500 </p>
+  </div>
+  <hr />
+  <div style={{display:"flex" , gap:"100px"}} >
+  <h4>Total before taxes:</h4>
+  <h6><img src="rs.png" alt="" style={{height:"20px" , width:"20px"}}/>{grandTotal}</h6>
+</div>
+  </div>
+  
 )}
-            </div>
-            
-            </div>
+ </div>
+ </div>
         
 
         <div>

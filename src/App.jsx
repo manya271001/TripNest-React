@@ -13,12 +13,13 @@ import Mansion from "./Mansion"
 import Mountains from './Mountain'
 import View from './View'
 import Booking from "./Booking"
+import Reservation from "./Reserve"
 
 
 function App() {
  let local = useLocation()
 
-  let auth= local.pathname==='/signup'|| local.pathname==='/login'
+  let auth= local.pathname==='/signup'|| local.pathname==='/login'|| local.pathname==='/reservation'
 
   return (
     <>
@@ -37,6 +38,7 @@ function App() {
         <Route path="/mountain" element={<Mountains/>}/>
         <Route path="/view" element={<View/>}/>
         <Route path="/booking" element={<Booking/>}/>
+        <Route path="/reservation" element={<Reservation/>}/>
       </Routes>
       {!auth && <Footer/>}
     </>
