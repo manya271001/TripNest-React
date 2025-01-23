@@ -3,8 +3,24 @@ import './Style.css'
 import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import List from './List'
+import { useNavigate } from 'react-router-dom'
 function Artic(){
     let[detail,setDtail]=useState([])
+     let[bookingData,setBookingData]=useState({})
+    let location=useNavigate()
+    
+function booking(id) {
+    axios.get(`http://localhost:3000/locations/${id}`)
+        .then(res => {
+            console.log(res.data);
+            const fetchedData = res.data;
+            setBookingData(fetchedData);
+            const detailData = { ...fetchedData };
+            console.log('Detail Data:', detailData);
+            axios.post("http://localhost:3000/detailData", detailData);
+          location("/booking")
+        });
+}
 
       function zoomIn(event) {
     const img = event.target; 

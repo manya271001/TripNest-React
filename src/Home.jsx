@@ -8,11 +8,7 @@ function Home(){
     let[detail,setDtail]=useState([])
     let[bookingData,setBookingData]=useState({})
     let location=useNavigate()
-      function zoomIn(event) {
-    const img = event.target; 
-    img.style.transform = 'scale(1.2)'; 
-    img.style.transition = 'transform 0.3s ease'; 
-  }
+    
 function booking(id) {
     axios.get(`http://localhost:3000/home/${id}`)
         .then(res => {
@@ -32,7 +28,11 @@ function booking(id) {
     img.style.transform = 'scale(1)'; 
     img.style.transition = 'transform 0.3s ease'; 
   }
-
+  function zoomIn(event) {
+    const img = event.target; 
+    img.style.transform = 'scale(1.2)'; 
+    img.style.transition = 'transform 0.3s ease'; 
+  }
     useEffect(()=>{
         axios.get("http://localhost:3000/home")
         .then(res=>{

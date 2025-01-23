@@ -583,6 +583,33 @@
       "date": "10-15 Mar",
       "price": "Rs. 3,200 ",
       "profile": "profile3.jpg"
+    },
+    {
+      "id": "4",
+      "img": "bnb4.jpg",
+      "title": "Jaipur, India",
+      "host": "Ananya",
+      "date": "5-10 Apr",
+      "price": "Rs. 4,000 ",
+      "profile": "profile2.jpg"
+    },
+    {
+      "id": "2",
+      "img": "bnb2.jpg",
+      "title": "Goa, India",
+      "host": "Priya",
+      "date": "15-20 Feb",
+      "price": "Rs. 4,500 ",
+      "profile": "profile1.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Houseboat Stay in Dal Lake",
+      "host": "Siddharth Pandey",
+      "date": "Available: Mar 5 - Mar 10",
+      "price": "₹7000",
+      "img": "houseBoat1.jpg",
+      "profile": "profile3.jpg"
     }
   ],
   "reservations": [
@@ -681,6 +708,18 @@
       "totalPrice": "9,600",
       "grandTotal": "16,100",
       "host": "Rohit"
+    },
+    {
+      "id": "3",
+      "title": "Houseboat Stay in Dal Lake",
+      "img": "houseBoat1.jpg",
+      "checkIn": "2025-01-23T18:30:00.000Z",
+      "checkOut": "2025-01-27T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 4,
+      "totalPrice": null,
+      "grandTotal": null,
+      "host": "Siddharth Pandey"
     }
   ]
 }
