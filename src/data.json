@@ -995,21 +995,33 @@
       "date": "1-5 May",
       "price": "Rs. 3,800 ",
       "profile": "profile4.jpg"
+    },
+    {
+      "id": "1",
+      "title": "Ocean Bliss in Goa",
+      "host": "Ayesha Khan",
+      "date": "Available: Jan 10 - Jan 15",
+      "price": "₹5000",
+      "img": "beach1.jpg",
+      "profile": "profile1.jpg"
+    },
+    {
+      "id": "2",
+      "img": "bnb2.jpg",
+      "title": "Goa, India",
+      "host": "Priya",
+      "date": "15-20 Feb",
+      "price": "Rs. 4,500 ",
+      "profile": "profile1.jpg"
     }
   ],
   "reservations": [
     {
       "id": "1",
-      "title": "Mountain Adventure in Himachal",
-      "img": "mountain2.jpg",
-      "checkIn": "2025-04-16T18:30:00.000Z",
-      "checkOut": "2025-04-25T18:30:00.000Z",
+      "checkIn": "2025-04-03T18:30:00.000Z",
+      "checkOut": "2025-04-12",
       "guests": 1,
-      "totalDays": 9,
-      "price": "₹6500",
-      "totalPrice": "58,500",
-      "grandTotal": "65,000",
-      "host": "Rohit Sharma"
+      "price": "₹5000"
     },
     {
       "id": "3",
@@ -1105,16 +1117,10 @@
     },
     {
       "id": "2",
-      "title": "Cozy Camping in Spiti Valley",
-      "img": "camping1.jpg",
-      "checkIn": "2025-01-28T18:30:00.000Z",
-      "checkOut": "2025-01-31T18:30:00.000Z",
+      "checkIn": "2025-04-25T18:30:00.000Z",
+      "checkOut": "2025-05-02",
       "guests": 1,
-      "totalDays": 3,
-      "price": "₹4000",
-      "totalPrice": "12,000",
-      "grandTotal": "18,500",
-      "host": "Aarti Mehta"
+      "price": "Rs. 4,500 "
     },
     {
       "id": "5",
@@ -1122,6 +1128,32 @@
       "checkOut": "2025-02-01",
       "guests": 1,
       "price": "Rs. 3,800 "
+    },
+    {
+      "id": "1",
+      "title": "Ocean Bliss in Goa",
+      "img": "beach1.jpg",
+      "checkIn": "2025-04-03T18:30:00.000Z",
+      "checkOut": "2025-04-09T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 6,
+      "price": "₹5000",
+      "totalPrice": "30,000",
+      "grandTotal": "36,500",
+      "host": "Ayesha Khan"
+    },
+    {
+      "id": "2",
+      "title": "Goa, India",
+      "img": "bnb2.jpg",
+      "checkIn": "2025-04-25T18:30:00.000Z",
+      "checkOut": "2025-04-28T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 3,
+      "price": "Rs. 4,500 ",
+      "totalPrice": "13,500",
+      "grandTotal": "20,000",
+      "host": "Priya"
     }
   ]
 }

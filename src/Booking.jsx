@@ -7,27 +7,28 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import './Style.css'
 function Booking(){
-    const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
-  const [difference, setDifference] = useState(null);
-  const [totalPrice, setTotalPrice] = useState(null);
-   const [grandTotal, setGrandTotal] = useState(null);
-   const [guestCount, setGuestCount] = useState(1); 
-  const [Bookingdetail, setBookingdetail] = useState({});
-  const navigate = useNavigate();
+    // State variables for managing booking details
+  const [startDate, setStartDate] = useState(null); // Start date for booking
+  const [endDate, setEndDate] = useState(null); // End date for booking
+  const [difference, setDifference] = useState(null); // Difference in days between start and end dates
+  const [totalPrice, setTotalPrice] = useState(null); // Total price for the stay
+  const [grandTotal, setGrandTotal] = useState(null); // Grand total including service fee
+  const [guestCount, setGuestCount] = useState(1); // Number of guests
+  const [Bookingdetail, setBookingdetail] = useState({}); // Booking details to be sent to the server
+  const [detail, setDetail] = useState({}); // Data for the selected booking
+  const navigate = useNavigate(); // For navigation
 
-    let [detail,setDetail] = useState({})
-  useEffect(() => {
+  // Fetch the latest detail data from the server
+ useEffect(() => {
     axios
       .get("http://localhost:3000/detailData")
       .then((res) => {
         const data = res.data;
-        setDetail(data[data.length - 1]);
+        setDetail(data[data.length - 1]); // Set the latest booking detail
         console.log("Fetched Detail Data:", data);
       })
       .catch((error) => console.error("Error fetching detail data:", error));
   }, []);
-
 
 
   // data for reviws
@@ -81,6 +82,8 @@ function Booking(){
       text: "Beautifully designed space. Every detail is thought through. I hope to return soon!",
     },
   ];
+ 
+    // Calculate the difference in days between the selected start and end dates
 useEffect(() => {
   if (startDate && endDate) {
     const start = new Date(startDate);
@@ -102,6 +105,9 @@ useEffect(() => {
     }
   }
 }, [startDate, endDate]);
+
+
+// Calculate total and grand total prices based on difference and detail data
 useEffect(() => {
   console.log("Difference (nights):", difference, "Detail Price (raw):", detail.price);
 
@@ -132,7 +138,7 @@ useEffect(() => {
   }
 }, [difference, detail.price]);
 
-
+  // Handle reservation by saving data to the server and navigating to the reservation page
 const handleReserve = () => {
    const reservationData = {
     id: detail.id,
