@@ -101,26 +101,38 @@ useEffect(() => {
   }
 }, [startDate, endDate]);
 
+useEffect(() => {
+    console.log("Start Date:", startDate, "End Date:", endDate, "Difference:", difference);
 
- useEffect(() => {
-  if (difference > 0 && detail.price) {
-    const price = parseFloat(detail.price.replace(/,/g, '').replace('Rs.', '').trim());
-    if (!isNaN(price)) {
-      const total = price * difference;
-      setTotalPrice(total.toLocaleString('en-IN'));
-       
-     
-        const gTotal = total + 6500; 
-        setGrandTotal(gTotal.toLocaleString('en-IN')); 
+    if (difference > 0 && detail.price) {
+        // Clean and parse the price
+        const priceString = detail.price.replace(/[^\d.]/g, ''); // Remove non-numeric characters
+        const parsedPrice = parseFloat(priceString); // Convert cleaned string to a number
 
+        console.log("Original Price:", detail.price, "Cleaned Price:", priceString, "Parsed Price:", parsedPrice);
 
+        if (!isNaN(parsedPrice)) {
+            const total = parsedPrice * difference; // Calculate the total
+            const gTotal = total + 6500; // Add service fee to total
+            
+            // Store values in state
+            setTotalPrice(total.toLocaleString('en-IN'));
+            setGrandTotal(gTotal.toLocaleString('en-IN'));
+
+            console.log("Total Price:", total, "Grand Total:", gTotal);
+        } else {
+            console.error("Invalid price format after parsing:", detail.price);
+            setTotalPrice(null);
+        }
     } else {
-      setTotalPrice(null);
+        console.log("Invalid difference or missing price.");
+        setTotalPrice(null);
     }
-  } else {
-    setTotalPrice(null);
-  }
 }, [difference, detail.price]);
+
+
+
+
   const handleReserve = () => {
    const reservationData = {
     id: detail.id,
@@ -130,6 +142,7 @@ useEffect(() => {
     checkOut: endDate,
     guests: guestCount,
     totalDays: difference,
+    price:detail.price,
     totalPrice,
     grandTotal,
     host:detail.host
@@ -147,6 +160,7 @@ useEffect(() => {
 
     navigate("/reservation", { state: reservationData });
   };
+console.log("Start Date:", startDate, "End Date:", endDate, "Difference:", difference);
 
 
     return(
@@ -369,23 +383,24 @@ useEffect(() => {
   <p >Number of nights: {difference}</p>
 )} */}
 {totalPrice !== null && (
-  <div style={{display:"flex",flexDirection:"column",marginTop:"30px"}}>
-    <div style={{display:"flex" , gap:"150px"}}>
-  <p> {detail.price} &nbsp; X  &nbsp;{difference} nights </p>
-  <p><img src="rs.png" alt="" style={{height:"20px" , width:"20px"}}/>{totalPrice}</p>
+  <div style={{ display: "flex", flexDirection: "column", marginTop: "30px" }}>
+    <div style={{ display: "flex", gap: "150px" }}>
+      <p> {detail.price} &nbsp; X  &nbsp;{difference} nights </p>
+      <p><img src="rs.png" alt="" style={{ height: "20px", width: "20px" }} />{totalPrice}</p>
+    </div>
+    <div style={{ display: "flex", gap: "170px" }}>
+      <p>TripNest Service fee </p>
+      <p><img src="rs.png" alt="" style={{ height: "20px", width: "20px" }} />6,500</p>
+    </div>
+    <hr />
+    <div style={{ display: "flex", gap: "100px" }}>
+      <h4>Total before taxes:</h4>
+      <h6><img src="rs.png" alt="" style={{ height: "20px", width: "20px" }} />{grandTotal}</h6>
+    </div>
   </div>
-   <div style={{display:"flex" , gap:"170px"}}>
-  <p>TripNest Service fee </p>
-  <p><img src="rs.png" alt="" style={{height:"20px" , width:"20px"}}/>6,500 </p>
-  </div>
-  <hr />
-  <div style={{display:"flex" , gap:"100px"}} >
-  <h4>Total before taxes:</h4>
-  <h6><img src="rs.png" alt="" style={{height:"20px" , width:"20px"}}/>{grandTotal}</h6>
-</div>
-  </div>
-  
 )}
+
+
  </div>
  </div>
         

@@ -610,116 +610,191 @@
       "price": "₹7000",
       "img": "houseBoat1.jpg",
       "profile": "profile3.jpg"
+    },
+    {
+      "id": "1",
+      "title": "Mountain Adventure in Himachal",
+      "host": "Rohit Sharma",
+      "date": "Available: Jan 10 - Jan 15",
+      "price": "₹6500",
+      "img": "mountain2.jpg",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Cozy Camping in Spiti Valley",
+      "host": "Aarti Mehta",
+      "date": "Available: Feb 1 - Feb 5",
+      "price": "₹4000",
+      "img": "camping1.jpg",
+      "profile": "profile1.jpg"
+    },
+    {
+      "id": "6",
+      "img": "bnb6.jpg",
+      "title": "Kerala, India",
+      "host": "Nisha",
+      "date": "20-25 Jun",
+      "price": "Rs. 5,000 ",
+      "profile": "profile1.jpg"
+    },
+    {
+      "id": "5",
+      "img": "bnb5.jpg",
+      "title": "Pondicherry, India",
+      "host": "Vikram",
+      "date": "1-5 May",
+      "price": "Rs. 3,800 ",
+      "profile": "profile4.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Houseboat Stay in Dal Lake",
+      "host": "Siddharth Pandey",
+      "date": "Available: Mar 5 - Mar 10",
+      "price": "₹7000",
+      "img": "houseBoat1.jpg",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Houseboat Stay in Dal Lake",
+      "host": "Siddharth Pandey",
+      "date": "Available: Mar 5 - Mar 10",
+      "price": "₹7000",
+      "img": "houseBoat1.jpg",
+      "profile": "profile3.jpg"
+    },
+    {
+      "id": "1",
+      "title": "Mountain Adventure in Himachal",
+      "host": "Rohit Sharma",
+      "date": "Available: Jan 10 - Jan 15",
+      "price": "₹6500",
+      "img": "mountain2.jpg",
+      "profile": "profile3.jpg"
     }
   ],
   "reservations": [
     {
-      "id": "1",
-      "checkIn": "2025-01-24",
-      "checkOut": "2025-01-27",
-      "guests": 1
-    },
-    {
-      "id": "4",
-      "title": "Jaipur, India",
-      "img": "bnb4.jpg",
-      "checkIn": "2025-01-22T18:30:00.000Z",
-      "checkOut": "2025-01-23T18:30:00.000Z",
-      "guests": 1,
-      "totalDays": 1,
-      "totalPrice": "4,000",
-      "grandTotal": "10,500"
-    },
-    {
-      "id": "7",
-      "title": "Shimla, India",
-      "img": "bnb7.jpg",
-      "checkIn": "2025-01-21T18:30:00.000Z",
-      "checkOut": "2025-01-28T18:30:00.000Z",
-      "guests": 1,
-      "totalDays": 7,
-      "totalPrice": "29,400",
-      "grandTotal": "35,900",
-      "host": "Aarav",
-      "null": ""
-    },
-    {
-      "id": "7",
-      "title": "Shimla, India",
-      "img": "bnb7.jpg",
-      "checkIn": "2025-01-21T18:30:00.000Z",
-      "checkOut": "2025-01-28T18:30:00.000Z",
-      "guests": 1,
-      "totalDays": 7,
-      "totalPrice": "29,400",
-      "grandTotal": "35,900",
-      "host": "Aarav"
-    },
-    {
-      "checkIn": "2025-01-21",
-      "checkOut": "2025-01-26",
-      "guests": "3",
-      "id": "2"
-    },
-    {
-      "id": "2",
-      "title": "Goa, India",
-      "img": "bnb2.jpg",
-      "checkIn": "2025-01-21T18:30:00.000Z",
-      "checkOut": "2025-01-26T18:30:00.000Z",
-      "guests": 1,
-      "totalDays": 5,
-      "totalPrice": "22,500",
-      "grandTotal": "29,000",
-      "host": "Priya"
-    },
-    {
-      "checkIn": "2025-01-22",
-      "checkOut": "2025-01-29",
-      "guests": 1,
-      "id": "9"
-    },
-    {
-      "id": "1",
-      "title": "Udaipur, India",
-      "img": "bnb1.jpg",
-      "checkIn": "2025-01-24T18:30:00.000Z",
-      "checkOut": "2025-01-27T18:30:00.000Z",
-      "guests": 1,
-      "totalDays": 3,
-      "totalPrice": "11,127",
-      "grandTotal": "17,627",
-      "host": "Jyeshtha"
-    },
-    {
-      "id": "6",
-      "checkIn": "2025-01-26",
-      "checkOut": "2025-01-28",
-      "guests": "7"
-    },
-    {
       "id": "3",
-      "title": "Manali, India",
-      "img": "bnb3.jpg",
-      "checkIn": "2025-01-23T18:30:00.000Z",
-      "checkOut": "2025-01-26T18:30:00.000Z",
+      "checkIn": "2025-01-27",
+      "checkOut": "2025-01-30",
       "guests": 1,
-      "totalDays": 3,
-      "totalPrice": "9,600",
-      "grandTotal": "16,100",
-      "host": "Rohit"
+      "price": "₹7000"
     },
     {
       "id": "3",
       "title": "Houseboat Stay in Dal Lake",
       "img": "houseBoat1.jpg",
       "checkIn": "2025-01-23T18:30:00.000Z",
-      "checkOut": "2025-01-27T18:30:00.000Z",
+      "checkOut": "2025-01-24T18:30:00.000Z",
       "guests": 1,
-      "totalDays": 4,
+      "totalDays": 1,
       "totalPrice": null,
       "grandTotal": null,
       "host": "Siddharth Pandey"
+    },
+    {
+      "id": "1",
+      "title": "Mountain Adventure in Himachal",
+      "img": "mountain2.jpg",
+      "checkIn": "2025-01-23T18:30:00.000Z",
+      "checkOut": "2025-01-26T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 3,
+      "totalPrice": null,
+      "grandTotal": null,
+      "host": "Rohit Sharma"
+    },
+    {
+      "id": "2",
+      "title": "Cozy Camping in Spiti Valley",
+      "img": "camping1.jpg",
+      "checkIn": "2025-01-24T18:30:00.000Z",
+      "checkOut": "2025-01-25T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 1,
+      "totalPrice": null,
+      "grandTotal": null,
+      "host": "Aarti Mehta"
+    },
+    {
+      "id": "2",
+      "title": "Cozy Camping in Spiti Valley",
+      "img": "camping1.jpg",
+      "checkIn": "2025-01-28T18:30:00.000Z",
+      "checkOut": "2025-01-29T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 1,
+      "totalPrice": null,
+      "grandTotal": null,
+      "host": "Aarti Mehta"
+    },
+    {
+      "id": "5",
+      "title": "Pondicherry, India",
+      "img": "bnb5.jpg",
+      "checkIn": "2025-01-23T18:30:00.000Z",
+      "checkOut": "2025-01-29T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 6,
+      "price": "Rs. 3,800 ",
+      "totalPrice": "22,800",
+      "grandTotal": "29,300",
+      "host": "Vikram"
+    },
+    {
+      "id": "3",
+      "title": "Houseboat Stay in Dal Lake",
+      "img": "houseBoat1.jpg",
+      "checkIn": "2025-01-27T18:30:00.000Z",
+      "checkOut": "2025-01-28T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 1,
+      "price": "₹7000",
+      "totalPrice": null,
+      "grandTotal": null,
+      "host": "Siddharth Pandey"
+    },
+    {
+      "id": "3",
+      "title": "Houseboat Stay in Dal Lake",
+      "img": "houseBoat1.jpg",
+      "checkIn": "2025-01-27T18:30:00.000Z",
+      "checkOut": "2025-01-28T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 1,
+      "price": "₹7000",
+      "totalPrice": null,
+      "grandTotal": null,
+      "host": "Siddharth Pandey"
+    },
+    {
+      "id": "1",
+      "title": "Mountain Adventure in Himachal",
+      "img": "mountain2.jpg",
+      "checkIn": "2025-01-28T18:30:00.000Z",
+      "checkOut": "2025-01-31T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 3,
+      "price": "₹6500",
+      "totalPrice": null,
+      "grandTotal": null,
+      "host": "Rohit Sharma"
+    },
+    {
+      "id": "1",
+      "title": "Mountain Adventure in Himachal",
+      "img": "mountain2.jpg",
+      "checkIn": "2025-01-29T18:30:00.000Z",
+      "checkOut": "2025-02-02T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 4,
+      "price": "₹6500",
+      "totalPrice": "26,000",
+      "grandTotal": "32,500",
+      "host": "Rohit Sharma"
     }
   ]
 }
