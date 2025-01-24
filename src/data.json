@@ -959,6 +959,42 @@
       "price": "₹6800",
       "img": "mountain1.jpg",
       "profile": "profile3.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Beach Camping in Varkala",
+      "host": "Priya Sharma",
+      "date": "Available: Jun 10 - Jun 15",
+      "price": "₹5000",
+      "img": "camping2.jpg",
+      "profile": "profile1.jpg"
+    },
+    {
+      "id": "8",
+      "img": "bnb8.jpg",
+      "title": "Ooty, India",
+      "host": "Meera",
+      "date": "10-15 Aug",
+      "price": "Rs. 3,900 ",
+      "profile": "profile1.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Cozy Camping in Spiti Valley",
+      "host": "Aarti Mehta",
+      "date": "Available: Feb 1 - Feb 5",
+      "price": "₹4000",
+      "img": "camping1.jpg",
+      "profile": "profile1.jpg"
+    },
+    {
+      "id": "5",
+      "img": "bnb5.jpg",
+      "title": "Pondicherry, India",
+      "host": "Vikram",
+      "date": "1-5 May",
+      "price": "Rs. 3,800 ",
+      "profile": "profile4.jpg"
     }
   ],
   "reservations": [
@@ -990,29 +1026,17 @@
     },
     {
       "id": "6",
-      "title": "Beach Camping in Varkala",
-      "img": "camping2.jpg",
-      "checkIn": "2025-01-27T18:30:00.000Z",
-      "checkOut": "2025-01-31T18:30:00.000Z",
+      "checkIn": "2025-01-25",
+      "checkOut": "2025-01-26",
       "guests": 1,
-      "totalDays": 4,
-      "price": "₹5000",
-      "totalPrice": "20,000",
-      "grandTotal": "26,500",
-      "host": "Priya Sharma"
+      "price": "₹5000"
     },
     {
       "id": "8",
-      "title": "Serene Shore in Rameswaram",
-      "img": "beach8.jpg",
-      "checkIn": "2025-04-25T18:30:00.000Z",
-      "checkOut": "2025-05-01T18:30:00.000Z",
+      "checkIn": "29 January 2025",
+      "checkOut": "2025-02-01",
       "guests": 1,
-      "totalDays": 6,
-      "price": "₹4600",
-      "totalPrice": "27,600",
-      "grandTotal": "34,100",
-      "host": "Kartik Kumar"
+      "price": "Rs. 3,900 "
     },
     {
       "id": "10",
@@ -1052,6 +1076,52 @@
       "totalPrice": "40,800",
       "grandTotal": "47,300",
       "host": "Amit Singh"
+    },
+    {
+      "id": "6",
+      "title": "Beach Camping in Varkala",
+      "img": "camping2.jpg",
+      "checkIn": "2025-01-26T18:30:00.000Z",
+      "checkOut": "2025-01-29T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 3,
+      "price": "₹5000",
+      "totalPrice": "15,000",
+      "grandTotal": "21,500",
+      "host": "Priya Sharma"
+    },
+    {
+      "id": "8",
+      "title": "Ooty, India",
+      "img": "bnb8.jpg",
+      "checkIn": "2025-01-28T18:30:00.000Z",
+      "checkOut": "2025-01-30T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 2,
+      "price": "Rs. 3,900 ",
+      "totalPrice": "7,800",
+      "grandTotal": "14,300",
+      "host": "Meera"
+    },
+    {
+      "id": "2",
+      "title": "Cozy Camping in Spiti Valley",
+      "img": "camping1.jpg",
+      "checkIn": "2025-01-28T18:30:00.000Z",
+      "checkOut": "2025-01-31T18:30:00.000Z",
+      "guests": 1,
+      "totalDays": 3,
+      "price": "₹4000",
+      "totalPrice": "12,000",
+      "grandTotal": "18,500",
+      "host": "Aarti Mehta"
+    },
+    {
+      "id": "5",
+      "checkIn": "2025-01-25",
+      "checkOut": "2025-02-01",
+      "guests": 1,
+      "price": "Rs. 3,800 "
     }
   ]
 }

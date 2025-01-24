@@ -6,17 +6,143 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./Style.css";
 
 function Reservation() {
-  const location = useLocation();
-  const { checkIn = new Date(), checkOut = new Date(), guests = 1, price } = location.state || {};
-  let [latestPrice, setPrice] = useState();
-  const navigate = useNavigate();
+const location = useLocation(); // To access route state passed to this component
+  const navigate = useNavigate(); // To navigate to another route
 
-  const formatDate = (date) => {
-    const d = new Date(date);
-    return d.toISOString().split("T")[0];
+  // State to track editing mode
+  const [isEditing, setIsEditing] = useState(false);
+
+  // State to store data received from the server
+  const [receivedData, setReceivedData] = useState({});
+
+  // State for the current reservation, including check-in, check-out, guests, and price
+  const [reservation, setReservation] = useState({
+    checkIn: "",
+    checkOut: "",
+    guests: 1,
+    price: null,
+    id: null,
+  });
+
+  // State to track the difference in days between check-in and check-out
+  const [difference, setDifference] = useState(0);
+
+  // States for calculated totals
+  const [totalPrice, setTotalPrice] = useState(null); // Total price for the stay
+  const [grandTotal, setGrandTotal] = useState(null); // Grand total including service fee
+
+  /**
+   * Fetch reservations data from the server when the component mounts.
+   * Updates the `receivedData` and `reservation` states.
+   */
+  useEffect(() => {
+    const fetchReservation = async () => {
+      try {
+        const res = await axios.get("http://localhost:3000/reservations");
+        const data = res.data;
+        const latestData = data[data.length - 1]; // Fetch the last reservation
+        setReceivedData(latestData);
+
+        // Update reservation with the latest data
+        setReservation({
+          id: latestData.id,
+          checkIn: latestData.checkIn || "",
+          checkOut: latestData.checkOut || "",
+          guests: latestData.guests || 1,
+          price: latestData.price || null,
+        });
+      } catch (error) {
+        console.error("Error fetching reservations:", error);
+      }
+    };
+
+    fetchReservation();
+  }, []); // Runs only once when the component mounts
+
+  /**
+   * Calculate the number of nights and update the total and grand total prices.
+   * This runs every time `reservation` changes.
+   */
+  useEffect(() => {
+    if (!reservation.checkIn || !reservation.checkOut || !reservation.price) return;
+
+    const calculateTotals = () => {
+      const checkInDate = new Date(reservation.checkIn);
+      const checkOutDate = new Date(reservation.checkOut);
+
+      if (checkInDate && checkOutDate && !isNaN(checkInDate) && !isNaN(checkOutDate)) {
+        const diffTime = checkOutDate - checkInDate;
+        const daysDiff = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
+        setDifference(daysDiff > 0 ? daysDiff : 0); // Ensure no negative values
+
+        if (daysDiff > 0) {
+          const pricePerNight = parseFloat(
+            reservation.price.replace(/,/g, "").replace("Rs.", "").trim()
+          );
+          if (!isNaN(pricePerNight)) {
+            const total = pricePerNight * daysDiff; // Calculate total price
+            const gTotal = total + 6500; // Add fixed service fee
+
+            // Update total and grand total in formatted currency
+            setTotalPrice(total.toLocaleString("en-IN"));
+            setGrandTotal(gTotal.toLocaleString("en-IN"));
+          }
+        }
+      }
+    };
+
+    calculateTotals();
+  }, [reservation]); // Runs whenever `reservation` state changes
+
+  /**
+   * Handle changes to the input fields for reservation details (check-in, check-out, guests).
+   * Updates the `reservation` state dynamically.
+   */
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setReservation((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
+  /**
+   * Save changes to the reservation by sending a PUT request to the server.
+   * Updates the server data and exits editing mode.
+   */
+  const handleSaveChanges = async (e) => {
+    e.preventDefault();
+    if (reservation.id) {
+      try {
+        const res = await axios.put(
+          `http://localhost:3000/reservations/${reservation.id}`,
+          reservation
+        );
+        alert("Reservation updated successfully!");
+        setReceivedData(res.data); // Update received data with the latest changes
+        setIsEditing(false); // Exit editing mode
+      } catch (error) {
+        console.error("Error updating reservation:", error);
+      }
+    } else {
+      alert("No reservation to update!");
+    }
+  };
+
+  /**
+   * Navigate to the Mansion page and show a confirmation message.
+   */
+  const bookingDone = () => {
+    alert("Reservation and booking done 🎉 🎉 🎉");
+    navigate("/Mansion");
+  };
+
+  /**
+   * Format a date string (ISO format) to a more user-friendly format.
+   * Example: 2023-01-24 -> 24 January 2023
+   */
   const formatDateDisplay = (isoDate) => {
+    if (!isoDate) return "Invalid Date";
     const date = new Date(isoDate);
     const day = date.getDate();
     const month = date.toLocaleString("default", { month: "long" });
@@ -24,106 +150,7 @@ function Reservation() {
     return `${day} ${month} ${year}`;
   };
 
-  const [receivedData, setReceivedData] = useState({});
-  const [isEditing, setIsEditing] = useState(false);
-  const [reservation, setReservation] = useState({
-    checkIn: formatDate(checkIn),
-    checkOut: formatDate(checkOut),
-    guests,
-    id: null,
-  });
-
-  const [difference, setDifference] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(null);
-  const [grandTotal, setGrandTotal] = useState(null);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/reservations")
-      .then((res) => {
-        const data = res.data;
-        const latestData = data[data.length - 1];
-        setReceivedData(latestData);
-        setPrice(latestData.price);
-        console.log("Fetched price:", latestData.price); // Debug log
-      })
-      .catch((error) => console.error("Error fetching reservations:", error));
-  }, []);
-
-  useEffect(() => {
-    if (receivedData.id) {
-      setReservation({
-        id: receivedData.id,
-        checkIn: formatDate(receivedData.checkIn),
-        checkOut: formatDate(receivedData.checkOut),
-        guests: receivedData.guests,
-        price: receivedData.price,
-      });
-    }
-  }, [receivedData]);
-
-  useEffect(() => {
-    const checkInDate = new Date(reservation.checkIn);
-    const checkOutDate = new Date(reservation.checkOut);
-
-    let daysDiff = 0;
-    let total = null;
-    let gTotal = null;
-
-    // Calculate the difference in days
-    if (!isNaN(checkInDate.getTime()) && !isNaN(checkOutDate.getTime())) {
-      const diffTime = checkOutDate.getTime() - checkInDate.getTime();
-      daysDiff = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      setDifference(daysDiff > 0 ? daysDiff : 0);
-    } else {
-      setDifference(0);
-    }
-
-    if (reservation.price && daysDiff > 0) {
-      // Clean and parse the price
-      const pricePerNight = parseFloat(
-        reservation.price.replace(/,/g, "").replace("Rs.", "").trim()
-      );
-
-      if (!isNaN(pricePerNight)) {
-        total = pricePerNight * daysDiff;
-        gTotal = total + 6500; // Adding service fee
-
-        setTotalPrice(total.toLocaleString("en-IN"));
-        setGrandTotal(gTotal.toLocaleString("en-IN"));
-
-        console.log("Total Price:", total);
-        console.log("Grand Total:", gTotal);
-      }
-    } else {
-      setTotalPrice(null);
-      setGrandTotal(null);
-    }
-  }, [reservation]);
-
-  const handleInputChange = (e) => {
-    setReservation({ ...reservation, [e.target.name]: e.target.value });
-  };
-
-  const handleSaveChanges = (e) => {
-    e.preventDefault();
-    if (reservation.id) {
-      axios
-        .put(`http://localhost:3000/reservations/${reservation.id}`, reservation)
-        .then((res) => {
-          alert("Reservation updated successfully!");
-          setReceivedData(res.data); // Update receivedData after saving changes
-          setIsEditing(false); // Exit editing mode
-        })
-        .catch((error) => console.error("Error updating reservation:", error));
-    } else {
-      alert("No reservation to update!");
-    }
-  };
- function bookingDone() {
-    alert("Reservation and booking done 🎉 🎉 🎉");
-    navigate("/Mansion");
-  }
+ 
 
   return (
     <div>
@@ -229,25 +256,23 @@ function Reservation() {
                 type="number"
                 name="guests"
                 value={reservation.guests}
-                onChange={handleInputChange}
+                
               />
             </div>
           </div>
 
           <button id="buttonReserve" style={{ width: "100%" }} onClick={bookingDone}>Reserve</button>
           <hr />
-          {receivedData.totalPrice && (
-            <div>
-              <p>{receivedData.price} x {difference} nights: <b>{totalPrice}</b></p>
-              <p>Service fee: <b>Rs. 6,500</b></p>
-              <hr />
-              <h4>Total: <b>Rs. {grandTotal}</b></h4>
-            </div>
-          )}
-          {console.log("receivedData:", receivedData)}
-          {console.log("difference:", difference)}
-          {console.log("totalPrice:", totalPrice)}
-          {console.log("grandTotal:", grandTotal)}
+       {difference > 0 && totalPrice && grandTotal ? (
+        <>
+          <p>{reservation.price} x {difference} nights: <b>{totalPrice}</b></p>
+          <p>Service fee: <b>Rs. 6,500</b></p>
+          <h4>Total: <b>Rs. {grandTotal}</b></h4>
+        </>
+      ) : (
+        <p>Loading reservation details...</p>
+      )}
+        
 
         </div>
       </div>
