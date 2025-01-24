@@ -74,7 +74,7 @@ function Header() {
               <ul className="dropdown-menu"> 
                 <li><Link className="dropdown-item" to='/signup'>SignUp</Link></li>
                 <li><Link className="dropdown-item" to='/login'>LogIn</Link></li>
-                <li><Link className="dropdown-item" to='/help'>Help</Link></li>
+                <li><Link to='/adminLogin' className="dropdown-item">AdminLogin</Link></li>
               </ul>
             </div>
           </li>

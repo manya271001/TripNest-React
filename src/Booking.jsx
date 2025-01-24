@@ -16,16 +16,18 @@ function Booking(){
   const [Bookingdetail, setBookingdetail] = useState({});
   const navigate = useNavigate();
 
-    let [detail,setData] = useState({})
-useEffect(()=>{
-axios.get("http://localhost:3000/detailData")
-.then(res=>{
-const data =res.data
-setData(data[data.length-1])
+    let [detail,setDetail] = useState({})
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/detailData")
+      .then((res) => {
+        const data = res.data;
+        setDetail(data[data.length - 1]);
+        console.log("Fetched Detail Data:", data);
+      })
+      .catch((error) => console.error("Error fetching detail data:", error));
+  }, []);
 
-console.log(res.data)
-})
-},[])
 
 
   // data for reviws
@@ -100,40 +102,38 @@ useEffect(() => {
     }
   }
 }, [startDate, endDate]);
-
 useEffect(() => {
-    console.log("Start Date:", startDate, "End Date:", endDate, "Difference:", difference);
+  console.log("Difference (nights):", difference, "Detail Price (raw):", detail.price);
 
-    if (difference > 0 && detail.price) {
-        // Clean and parse the price
-        const priceString = detail.price.replace(/[^\d.]/g, ''); // Remove non-numeric characters
-        const parsedPrice = parseFloat(priceString); // Convert cleaned string to a number
+  if (difference > 0 && detail.price) {
+    // Clean and parse the price
+    const priceString = detail.price.replace(/[^\d]/g, ""); // Remove non-numeric characters
+    const parsedPrice = priceString ? parseInt(priceString, 10) : 0; // Convert cleaned string to a number
 
-        console.log("Original Price:", detail.price, "Cleaned Price:", priceString, "Parsed Price:", parsedPrice);
+    console.log("Parsed Price:", parsedPrice);
 
-        if (!isNaN(parsedPrice)) {
-            const total = parsedPrice * difference; // Calculate the total
-            const gTotal = total + 6500; // Add service fee to total
-            
-            // Store values in state
-            setTotalPrice(total.toLocaleString('en-IN'));
-            setGrandTotal(gTotal.toLocaleString('en-IN'));
+    if (parsedPrice > 0) {
+      const total = parsedPrice * difference; // Calculate the total
+      const gTotal = total + 6500; // Add service fee
 
-            console.log("Total Price:", total, "Grand Total:", gTotal);
-        } else {
-            console.error("Invalid price format after parsing:", detail.price);
-            setTotalPrice(null);
-        }
+      console.log("Total Price (calculated):", total, "Grand Total (calculated):", gTotal);
+
+      setTotalPrice(total.toLocaleString("en-IN")); // Format as Indian currency
+      setGrandTotal(gTotal.toLocaleString("en-IN")); // Format as Indian currency
     } else {
-        console.log("Invalid difference or missing price.");
-        setTotalPrice(null);
+      console.error("Invalid parsed price after parsing:", parsedPrice);
+      setTotalPrice(0);
+      setGrandTotal(0);
     }
+  } else {
+    console.log("Invalid difference or missing price.");
+    setTotalPrice(0);
+    setGrandTotal(0);
+  }
 }, [difference, detail.price]);
 
 
-
-
-  const handleReserve = () => {
+const handleReserve = () => {
    const reservationData = {
     id: detail.id,
     title: detail.title,

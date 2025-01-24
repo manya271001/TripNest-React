@@ -540,3 +540,166 @@ margin-bottom: 50px;
   border: none;
   margin-left: 100px;
 }
+
+
+/* AdminTable.css */
+
+.adminTable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.adminTable thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.adminTable th,
+.adminTable td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.adminTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.adminTable tbody tr button{
+  border: none;
+  outline: none;
+  text-decoration: underline;
+  color: #009879;
+  background-color: #d1f7e5;
+  border-radius: 12px;
+}
+.adminTable tbody tr button:hover{
+  border: 1px solid rgb(215, 215, 215);
+  box-shadow: 1px 1px 1px 1px gainsboro;
+}
+
+.adminTable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.adminTable tbody tr:nth-of-type(odd) {
+    background-color: #eaf9f1;
+}
+
+.adminTable tbody tr:hover {
+    background-color: #d1f7e5;
+    cursor: pointer;
+}
+
+.adminTable td {
+    font-size: 16px;
+    color: #333;
+}
+
+.adminTable caption {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #009879;
+}
+
+
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        
+        gap: 30px;
+    }
+
+    .navbar-list {
+        flex-direction: row;
+        gap:40px
+    }
+
+    .cardSection {
+        grid-template-columns: 1fr;
+        margin-left: 30%
+    }
+
+    #searchSection{
+      margin-left: 20%;
+    }
+    .image {
+        grid-template-columns: 1fr;
+    }
+
+    #reservation {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    #rightSide {
+        width: 90%;
+    }
+
+    .footer-sections {
+        flex-direction: column;
+        width: 1500px;
+    }
+
+    .footer-settings {
+        flex-direction: column;
+         width: 1500px;
+    }
+
+    #editForm {
+        width: 80%;
+        left: 10%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #navbar {
+        padding: 5px 10px;
+    }
+
+    .navbar-title {
+        font-size: 24px;
+    }
+    #searchSection{
+      margin-left: 20%;
+    }
+    .navbar-menu {
+        gap: 15px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-settings {
+        gap: 10px;
+    }
+
+    #rightSide {
+        width: 100%;
+    }
+
+    .formSection,
+    .loginForm {
+        padding: 15px;
+    }
+     .cardSection {
+        grid-template-columns: 1fr;
+        margin-left: 60%
+    }
+    .footer{
+      display: none;
+    }
+}
+

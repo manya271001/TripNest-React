@@ -14,12 +14,14 @@ import Mountains from './Mountain'
 import View from './View'
 import Booking from "./Booking"
 import Reservation from "./Reserve"
+import AdminLogin from "./AdminLogin"
+import AdminTable from "./AdminTable"
 
 
 function App() {
  let local = useLocation()
 
-  let auth= local.pathname==='/signup'|| local.pathname==='/login'|| local.pathname==='/reservation'
+  let auth= local.pathname==='/signup'|| local.pathname==='/login'|| local.pathname==='/reservation' || local.pathname==='/adminLogin' || local.pathname==='/adminTable'
 
   return (
     <>
@@ -39,6 +41,8 @@ function App() {
         <Route path="/view" element={<View/>}/>
         <Route path="/booking" element={<Booking/>}/>
         <Route path="/reservation" element={<Reservation/>}/>
+        <Route path="/adminLogin" element={<AdminLogin/>}/>
+        <Route path="/adminTable" element={<AdminTable/>}/>
       </Routes>
       {!auth && <Footer/>}
     </>
