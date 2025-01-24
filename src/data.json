@@ -1013,16 +1013,18 @@
       "date": "15-20 Feb",
       "price": "Rs. 4,500 ",
       "profile": "profile1.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Rustic Retreat in Manali",
+      "host": "Aditi Mehta",
+      "date": "Available: Feb 5 - Feb 10",
+      "price": "₹5000",
+      "img": "cabin2.jpg",
+      "profile": "profile2.jpg"
     }
   ],
   "reservations": [
-    {
-      "id": "1",
-      "checkIn": "2025-04-03T18:30:00.000Z",
-      "checkOut": "2025-04-12",
-      "guests": 1,
-      "price": "₹5000"
-    },
     {
       "id": "3",
       "title": "Houseboat Stay in Dal Lake",
@@ -1035,20 +1037,6 @@
       "totalPrice": "1,05,000",
       "grandTotal": "1,11,500",
       "host": "Siddharth Pandey"
-    },
-    {
-      "id": "6",
-      "checkIn": "2025-01-25",
-      "checkOut": "2025-01-26",
-      "guests": 1,
-      "price": "₹5000"
-    },
-    {
-      "id": "8",
-      "checkIn": "29 January 2025",
-      "checkOut": "2025-02-01",
-      "guests": 1,
-      "price": "Rs. 3,900 "
     },
     {
       "id": "10",
@@ -1116,20 +1104,6 @@
       "host": "Meera"
     },
     {
-      "id": "2",
-      "checkIn": "2025-04-25T18:30:00.000Z",
-      "checkOut": "2025-05-02",
-      "guests": 1,
-      "price": "Rs. 4,500 "
-    },
-    {
-      "id": "5",
-      "checkIn": "2025-01-25",
-      "checkOut": "2025-02-01",
-      "guests": 1,
-      "price": "Rs. 3,800 "
-    },
-    {
       "id": "1",
       "title": "Ocean Bliss in Goa",
       "img": "beach1.jpg",
@@ -1141,19 +1115,6 @@
       "totalPrice": "30,000",
       "grandTotal": "36,500",
       "host": "Ayesha Khan"
-    },
-    {
-      "id": "2",
-      "title": "Goa, India",
-      "img": "bnb2.jpg",
-      "checkIn": "2025-04-25T18:30:00.000Z",
-      "checkOut": "2025-04-28T18:30:00.000Z",
-      "guests": 1,
-      "totalDays": 3,
-      "price": "Rs. 4,500 ",
-      "totalPrice": "13,500",
-      "grandTotal": "20,000",
-      "host": "Priya"
     }
   ]
 }
